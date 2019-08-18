@@ -1,0 +1,81 @@
+/* Custom IDs -------------------------------------------------------------------------- */
+
+#brandLogoStyle {
+    font-size: 200% !important;
+}
+
+#userWelcomeSize {
+    font-size: 200% !important;
+    color: #313131 !important;
+}
+
+#legendCard {
+    position: relative;
+    top: 5px;
+    width: 15rem;
+}
+
+#addMemberLink {
+    padding: 0;
+    border: none;
+}
+
+/* Tier Badgets ------------------- */
+
+/* Badge Base */
+
+.level- {
+    border-radius: 0px !important;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 100%;
+    padding: 3%;
+    width: 70%;
+}
+
+/* Tier Colors */
+
+.blue {
+    background-color: #145679 !important;
+}
+
+.green {
+    background-color: #0e7c03 !important;
+}
+
+.purple {
+    background-color: #b100f0 !important;
+}
+
+.orange {
+    background-color: #e5690b !important;
+}
+
+.transparent {
+    background-color: #ffffff !important;
+}
+
+/* Custom Classes -------------------------------------------------------------------------- */
+
+.l-card {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column wrap;
+    min-width: 50px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    min-width: 15%;
+    max-width: 15%
+}
+
+/* Footer Style */
+
+.footer {
+    background-color: #4f4f4f;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

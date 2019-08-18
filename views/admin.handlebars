@@ -1,0 +1,188 @@
+{{!-- Site Navigation [START] --}}
+<nav class="navbar navbar-expand-lg navbar-white bg-white shadow-md p-5">
+    <div class="navbar-brand">
+        {{!-- Site Navigation 'Icon Brand' --}}
+        <span>
+            {{!-- Site Navigation 'Icon Wrap' --}}
+            {{!-- Site Navbar Brand --}}
+            <span id="brandLogoStyle" class="brand-name">
+                <b class="text-dark">Get It</b><strong class="text-danger"> Together</strong>
+            </span>
+        </span>
+    </div>
+
+    {{!-- Site Navigation 'Collapse Content' --}}
+    <div class="collapse navbar-collapse" id="navbarNav">
+        {{!-- Currently this is just filler to --}}
+        {{!-- Push the 'admin text' right --}}
+    </div>
+
+    {{!-- Site Navigation 'Admin' text --}}
+    <span class="navbar-text">
+        <h4 class="text-muted">Admin</h4>
+    </span>
+</nav>
+{{!-- Site Navigation [END] --}}
+
+{{!-- Site Info Table [START] --}}
+<div class="container-fluid mt-4">
+    <div class="ml-5">
+        {{!-- Site Info 'Team Info Table' Container --}}
+        <div class="container-fluid">
+            {{!-- Site Info 'Welcome the User' --}}
+            <h2 id="userWelcomeSize" class="display-4">Welcome, <i id="fUserName">Username</i></h2>
+            <h5 class="text-muted">Your Team Information</h5>
+        </div>
+        <div class="container float-left row-lg-12">
+
+            <table class="table bg-white shadow-md">
+
+                <thead id="pTableHead">
+                    {{!-- ✂ ---------------------------------------------------------------------  --}}
+                    <tr class="text-center">
+                        <th scope="col">Team Member</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Tier Level</th>
+                        <th scope="col">Hours Used</th>
+                        <th scope="col">Hours Remaining</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Table Actions</th>
+                    </tr>
+                    {{!-- ✂ ---------------------------------------------------------------------  --}}
+                </thead>
+                {{!-- Site Team Info 'Table Body' --}}
+                <tbody id="pTableBody">
+                    {{#each employees}}
+
+                    <tr class="text-center">
+                        <td>{{this.team_member}}</td>
+                        <td>{{this.title}}</td>
+                        <td><span class="badge shadow-md level- blue">{{this.tier_level}}</span></td>
+                        <td>{{this.hours_used}}</td>
+                        <td>{{this.hours_remaining}}</td>
+                        <td>{{this.start_date}}</td>
+                        <td>
+                            {{!-- Table Edit Action --}}
+                            <button class="btn btn-default">
+                                <i id="btnEdit" class="fa fa-pencil text-warning" aria-hidden="true"></i>
+                            </button>
+
+                            {{!-- Table Delete Action --}}
+                            <button class="btn btn-default">
+                                <i id="btnDelete" class="fa fa-trash text-danger" aria-hidden="true"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- Table 'Add New Team Member' --}}
+                <tr>
+                    <td id="addMemberLink" class="text-center">
+                        <button class="btn btn-link" href="#">+ Add Team Member</button>
+                    </td>
+                </tr>
+            </table>
+            {{!-- Site Add PTO --}}
+            <div class="row container ml-1 mb-5">
+                {{!-- Site 'Add PTO' Label --}}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="text-muted">Add PTO</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container">
+                    {{!-- Site 'Add PTO' card --}}
+                    <div class="card" style="width: 80%;">
+                        {{!-- Site 'Add PTO' Body Content --}}
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Team Member</th>
+                                        <th scope="col">Requested Time Off (hours)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {{!-- New Members Name || NOTE: Autofill W/ Name --}}
+                                        <td>
+                                            <input type="text" class="form-control" name="fNewMember" id="fNewMember"
+                                                placeholder="Bob Smith">
+                                        </td>
+
+                                        {{!-- Requested Time Off (hours) --}}
+                                        <td><input type="text" class="form-control" id="hoursRequested"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {{!-- Submit Success --}}
+                            <div style="display: none;" id="ptoSuccess" class="alert alert-success" role="alert">
+                                Your request has been submitted!
+                            </div>
+                            {{!-- Submit Failure --}}
+                            <div style="display: none;" id="ptoFail" class="alert alert-success" role="alert">
+                                You do not have enough PTO hours for this request.
+                            </div>
+                            <button class="btn btn-darkblue float-right" id="addPTO">Add PTO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tableData">
+
+        </div>
+        {{!-- Site Info Table [END] --}}
+    </div>
+    {{!-- Site Legend [START] --}}
+    <div id="legendCard" class="card row-md-13 l-card">
+        <div class="card-body">
+            <table class="table">
+                {{!-- Site 'Badge Legend' Table Head --}}
+                <h4 class="text-center mb-4">Starting Hours</h4>
+                <thead style="width: 100%">
+                    <tr>
+                        <th scope="col">Tiers</th>
+                        <th scope="col">Hours</th>
+                    </tr>
+                </thead>
+                {{!-- Site 'Badge Legend' Table Body --}}
+                <tbody>
+                    {{!-- All Badge Levels --}}
+                    <td class="col-sm-8">
+                        <span class="badge shadow-md level- blue">Blue</span>
+                        <span class="badge shadow-md level- green mt-1">Green</span>
+                        <span class="badge shadow-md level- purple mt-1">Purple</span>
+                    </td>
+                    {{!-- All Badge Hours --}}
+                    <td class="col">
+                        <span class="badge level-transparent text-dark">80</span>
+                        <span class="badge level-transparent text-dark mt-2">120</span>
+                        <span class="badge level-transparent text-dark mt-2">200</span>
+                    </td>
+                </tbody>
+            </table>
+            {{!-- Edit Link --}}
+            <span class="float-right ml-5" id="editTier"><a href="#Edit">Edit</a></span>
+        </div>
+    </div>
+</div>
+</div>
+{{!-- Site Legend [END] --}}
+
+{{!-- Site Footer [START] --}}
+<footer class="footer mt-auto py-2">
+    <div class="container-fluid ml-5">
+        <span class="text-white">
+            Shawn, Connie, and A.J..
+            <br>
+            &reg; All Rights Reserved.
+        </span>
+    </div>
+</footer>
+{{!-- Site Footer [END] --}}
+
+{{!-- jQuery CDN --}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
