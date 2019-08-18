@@ -1,69 +1,68 @@
 {{!-- Site Create Account Container [Start] --}}
 <div class="container text-center container-middle">
+
   {{!-- Site Create Account 'App Name' Col --}}
   <div class="col-md-12">
-    {{!-- Site Create Account 'App Name' --}}
     <h1 class="display-5 ml-3">Get It <strong class="text-danger">Together.</strong></h1>
-    {{!-- Site 'App Name' Description --}}
+
     <label class="text-center text-muted-dark">Add a New Team Member</label>
+
     {{!-- Site 'Create Account Form' --}}
     <div id="cardLoginLength" class="card shadow-sm p-3 offset-3 bg-white rounded">
+        
       {{!-- Site 'Create Account Form' Card Body --}}
       <div class="card-body p-0 m-0">
-        {{!-- Site 'Create Account Form' Form Content --}}
         <form>
-          {{!-- Site 'Create Account Form' group 'New Member Address Field' --}}
+
+          {{!-- Site 'Create Account Form' Form Content --}}
           <div class="form-group input-group">
-            {{!-- Site 'Create Account Form' prepended 'Person Fa Icon' --}}
-            <div class="input-group-prepend">
-              <div class="input-group-text bg-dark text-white"></div>
-            </div>
-            {{!-- Site 'Create Account Form' 'New Member Input Field' --}}
-            <input type="text" class="form-control" name="fNewMember" id="fNewMember" placeholder="bob McBobface">
+            <label>Title</label>
+            <input type="text" class="form-control" id="title">
           </div>
+
           <div class="form-group input-group">
-            {{!-- Site 'Create Account Form' prepended 'Email Fa Icon' --}}
-            <div class="input-group-prepend">
-              <div class="input-group-text bg-dark text-white"></div>
-            </div>
-            {{!-- Site 'Create Account Form' 'Email Input Field' --}}
-            <input type="text" class="form-control" name="username" id="username" placeholder="bob@bob.com">
+            <label>Tier Level</label>
+            <select class="form-control" id="tier_level">
+            <option>Blue</option>
+            <option>Green</option>
+            <option>Purple</option>
+            </select>
           </div>
-          {{!-- Site 'Create Account Form' group 'Password Field' --}}
+
           <div class="form-group input-group">
-            {{!-- Site 'Create Account Form' prepended 'Password Fa Icon' --}}
-            <div class="input-group-prepend">
-              <div class="input-group-text bg-dark text-white"></i></div>
-            </div>
-            {{!-- Site 'Create Account Form' 'Password Input Field' --}}
-            <input type="password" class="form-control" name="password" id="password" placeholder="***************">
+            <label>Start Date (YYYY-MM-DD)</label>
+            <input type="text" class="form-control" id="start_date">
           </div>
+
         </form>
       </div>
 
-        <div class="col-md">
-          {{!-- Create New Account --}}
-          <button class="btn btn-orange col-md-7" href="/admin" id="newAccount" type="submit">Add New Member</a>
+            {{!-- Create New Account --}}
+            <div class="col-md">
+            <button class="btn btn-orange col-md-7" href="/admin" id="newAccount" type="submit">Add New Member</a>
+            </div>
+            <p id="alert"</p>
         </div>
-        <p id="alert"</p>
-      </div>
-    </div>
-    {{!-- Site 'Footer' Copyright --}}
-    <div class="row mt-5">
-      {{!-- Site 'Footer' App Developers --}}
-      <div class="col-md-12">
-        Shawn, Connie, and A.J
-        <br>
-        {{!-- &reg; = HTML ASCII Entity For '®'  --}}
-        &reg; All Rights Reserved.
       </div>
     </div>
   </div>
+</div>      
+
+
+{{!-- Site 'Footer' Copyright --}}
+<div class="row mt-5">
+    {{!-- Site 'Footer' App Developers --}}
+    <div class="col-md-12">
+    Shawn, Connie, and A.J
+    <br>
+    {{!-- &reg; = HTML ASCII Entity For '®'  --}}
+    &reg; All Rights Reserved.
+    </div>
 </div>
-{{!-- / Site App Create Account Container [End] --}}
+
 
 {{!-- jQuery CDN --}}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-{{!-- CRUD Form Operations ---> 'NOT YET SETUP' --}}
+{{!-- CRUD Form Operations --}}
 <script src="../public/js/index.js"></script>

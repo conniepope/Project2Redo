@@ -25,7 +25,12 @@ module.exports = function(app) {
     });
   });
 
-  
+   // Load NEW MEMBER page
+   app.get("/newMember", function(req, res) {
+    db.employees.findAll({}).then(function() {
+      res.render("newMember");
+    });
+  }); 
 
 
   // Load page and pass in an example by id
